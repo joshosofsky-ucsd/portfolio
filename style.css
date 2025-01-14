@@ -1,6 +1,60 @@
+/* Set the accent color as a custom property */
+:root {
+  --color-accent: oklch(65% 100% 27);
+}
+/* Apply the accent color globally */
+html {
+  accent-color: var(--color-accent); /* Ensures elements inherit the accent color */
+}
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    max-width: 100ch; 
+    margin-inline: auto; 
+    padding: 1rem;
+    padding-top: 3rem;
   }
+  /* Navigation Bar Styling */
+nav {
+  position: fixed; /* Fixes the navbar to the top of the screen */
+  top: 0; /* Positions the navbar at the very top */
+  left: 0; /* Aligns it to the left edge */
+  width: 100%; /* Ensures it spans the full width of the viewport */
+  background-color: #f0f0f0; /* Adds a background color for visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+  z-index: 1000; /* Ensures the navbar appears above other elements */
+  padding: 0.5rem 0; /* Adds vertical padding for better spacing */
+  display: flex; /* Enables Flexbox layout */
+  justify-content: space-evenly;
+  border-bottom: 1px solid oklch(80% 3% 200); /* Adds a subtle border at the bottom */
+  margin-bottom: 1rem; /* Adds space below the navbar */
+}
+nav ul, nav ul li {
+  display: contents;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: all 0.3s ease;;
+  flex: 1; /* Makes all links take up the same amount of space */
+  text-align: center;
+  border-bottom: none; /* Ensures no border for other links */
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent); /* Uses the accent color for hover */
+  color: var(--color-accent);
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--color-accent); /* Add the bar under the current page link */
+  padding-bottom: 0.1em; /* Adjust padding to counter the border height */
+  font-weight: bold; /* Make it visually distinct */
+}
