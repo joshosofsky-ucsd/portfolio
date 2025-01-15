@@ -58,3 +58,128 @@ nav a.current {
   padding-bottom: 0.1em; /* Adjust padding to counter the border height */
   font-weight: bold; /* Make it visually distinct */
 }
+
+/* Ensure form controls inherit the font from the body */
+input, textarea, button {
+  font: inherit; /* Inherits font settings (font-family, size, etc.) */
+}
+
+/* Form styling */
+form {
+  max-width: 600px; /* Limits the form width */
+  margin: 2rem auto; /* Centers the form with spacing */
+  padding: 1rem; /* Adds internal spacing */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Subtle background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}
+
+/* Labels and controls */
+label, input, textarea, button {
+  display: block; /* Stack elements vertically */
+  width: 100%; /* Make elements take the full width */
+  box-sizing: border-box; /* Includes padding and border in width */
+  margin-bottom: 1rem; /* Adds spacing below each element */
+}
+
+/* Inputs and textarea styling */
+input, textarea {
+  padding: 0.75rem; /* Adds internal spacing */
+  border: 1px solid #ccc; /* Adds a light border */
+  border-radius: 5px; /* Slightly rounded corners */
+  font: inherit; /* Ensures consistent typography */
+  resize: vertical; /* Limits resizing of textareas to vertical only */
+}
+
+/* Button styling */
+button {
+  padding: 0.75rem 1rem; /* Adds spacing */
+  background-color: var(--color-accent); /* Accent color */
+  color: white; /* White text for contrast */
+  border: none; /* Removes border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Changes cursor on hover */
+  font-weight: bold; /* Makes button text bold */
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #d00000; /* Darker shade of red */
+}
+
+/* Form field focus */
+input:focus, textarea:focus {
+  border-color: var(--color-accent); /* Highlighted border */
+  outline: none; /* Removes default focus outline */
+}
+
+/* Styling for labels */
+label {
+  margin-bottom: 0.5rem; /* Adds space between the label and the input */
+  font-weight: bold; /* Makes labels more prominent */
+}
+
+.projects {
+  display: grid; /* Makes the container a grid */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible columns */
+  gap: 1em; /* Adds spacing between articles */
+  padding: 1rem; /* Optional: Adds padding around the grid */
+}
+
+.projects article {
+  display: grid; /* Makes each article a grid container */
+  grid-template-rows: subgrid; /* Aligns rows with the parent grid */
+  grid-row: span 3; /* Ensures each article spans 3 rows */
+  gap: 0.5em; /* Adds spacing between elements inside the article */
+  padding: 0.5rem; /* Optional: Adds internal padding for better spacing */
+  border: 1px solid #ccc; /* Optional: Adds a light border for visibility */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+/* Styling for <h2> inside <article> */
+.projects article h2 {
+  margin: 0; /* Removes default margin for more consistent spacing */
+  font-size: 1.25rem; /* Optional: Adjusts heading size */
+}
+
+/* Styling for images inside <article> */
+.projects article img {
+  width: 100%; /* Makes images take the full width of their container */
+  height: auto; /* Ensures images maintain their aspect ratio */
+}
+
+/* Optional: Styling for paragraphs inside <article> */
+.projects article p {
+  margin: 0.5em 0; /* Adds vertical spacing between the paragraph and other elements */
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1; /* Tighter line height for headings */
+  text-wrap: balance; /* Balances lines to avoid uneven wrapping */
+  margin: 0.5em 0; /* Adds consistent spacing above and below */
+}
+
+/* Specific styles for <h1> */
+h1 {
+  font-size: 400%; /* Makes <h1> significantly larger than body text */
+  font-weight: bold; /* Ensures <h1> is bold for emphasis */
+}
+
+/* Specific styles for <h2> */
+h2 {
+  font-size: 200%; /* Makes <h2> stand out, but smaller than <h1> */
+  font-weight: bold; /* Ensures <h2> is bold for emphasis */
+}
+
+/* Optional: Additional heading size adjustments for other levels */
+h3 {
+  font-size: 150%; /* Adjusts <h3> size */
+}
+
+h4, h5, h6 {
+  font-size: 125%; /* Keeps smaller headings proportionate */
+}
