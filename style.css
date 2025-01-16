@@ -15,6 +15,8 @@ body {
     margin-inline: auto; 
     padding: 1rem;
     padding-top: 3rem;
+    background-color: skyblue; /* Replace this with your desired color */
+    color: #333;
   }
   /* Navigation Bar Styling */
 nav {
@@ -161,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1; /* Tighter line height for headings */
   text-wrap: balance; /* Balances lines to avoid uneven wrapping */
   margin: 0.5em 0; /* Adds consistent spacing above and below */
+  color: #333333;
 }
 
 /* Specific styles for <h1> */
