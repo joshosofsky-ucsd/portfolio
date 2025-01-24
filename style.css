@@ -5,6 +5,7 @@
 /* Apply the accent color globally */
 html {
   accent-color: var(--color-accent); /* Ensures elements inherit the accent color */
+  color-scheme: light dark;
 }
 body {
     /* Set line height to 1.5 times the font size
@@ -15,8 +16,8 @@ body {
     margin-inline: auto; 
     padding: 1rem;
     padding-top: 3rem;
-    background-color: skyblue; /* Replace this with your desired color */
-    color: #333;
+    background-color: Canvas; /* Replace this with your desired color */
+    color: CanvasText;
   }
   /* Navigation Bar Styling */
 nav {
@@ -24,14 +25,17 @@ nav {
   top: 0; /* Positions the navbar at the very top */
   left: 0; /* Aligns it to the left edge */
   width: 100%; /* Ensures it spans the full width of the viewport */
-  background-color: #f0f0f0; /* Adds a background color for visibility */
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%); /* Adds a background color for visibility */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
   z-index: 1000; /* Ensures the navbar appears above other elements */
   padding: 0.5rem 0; /* Adds vertical padding for better spacing */
   display: flex; /* Enables Flexbox layout */
   justify-content: space-evenly;
-  border-bottom: 1px solid oklch(80% 3% 200); /* Adds a subtle border at the bottom */
   margin-bottom: 1rem; /* Adds space below the navbar */
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom-color: var(--border-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 nav ul, nav ul li {
   display: contents;
@@ -109,7 +113,7 @@ button {
 
 /* Button hover effect */
 button:hover {
-  background-color: #d00000; /* Darker shade of red */
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 /* Form field focus */
@@ -163,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1; /* Tighter line height for headings */
   text-wrap: balance; /* Balances lines to avoid uneven wrapping */
   margin: 0.5em 0; /* Adds consistent spacing above and below */
-  color: #333333;
+  color: CanvasText;
 }
 
 /* Specific styles for <h1> */
@@ -186,3 +190,31 @@ h3 {
 h4, h5, h6 {
   font-size: 125%; /* Keeps smaller headings proportionate */
 }
+
+:root {
+  color-scheme: light dark; /* Supports both light and dark modes */
+}
+
+.color-scheme {
+  position: absolute; /* Take it out of the normal document flow */
+  top: 3.5rem; /* Set distance from the top */
+  right: 0rem; /* Set distance from the right */
+  font-size: 80%; /* Adjust font size */
+  font-family: inherit; /* Inherit font family */
+  background-color: #fff; /* Optional: Add background color */
+  padding: 5px 10px; /* Optional: Add padding */
+  border: 1px solid #ccc; /* Optional: Add border */
+  border-radius: 5px; /* Optional: Round corners */
+  z-index: 1000; /* Ensure it appears on top */
+}
+
+
+.color-scheme select {
+  margin-left: 10px;
+  padding: 2px;
+}
+
+
+
+
+
