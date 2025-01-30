@@ -1,7 +1,61 @@
 /* Set the accent color as a custom property */
 :root {
+  color-scheme: light dark;
   --color-accent: oklch(65% 100% 27);
+  /* --text-color: CanvasText;
+  --bg-color: Canvas; */
+  /* --nav-bg: color-mix(in oklch, var(--color-accent), Canvas 85%); */
+  /* --border-color: oklch(50% 10% 200 / 40%); */
+  /* Light mode defaults */
+  --text-color: #333;
+  --bg-color: #fff;
+  --nav-bg: color-mix(in oklch, var(--color-accent), #fff 85%);
+  --border-color: oklch(50% 10% 200 / 40%);
+
+  /* Dark mode overrides */
+  @media (prefers-color-scheme: dark) {
+    --text-color: #fff;
+    --bg-color: #222;
+    --nav-bg: color-mix(in oklch, var(--color-accent), #222 85%);
+    --border-color: oklch(50% 10% 200 / 40%);
+  }
 }
+
+header:first-of-type {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Reset styles for section headers */
+.resume-section header,
+article header {
+  position: static;
+  width: auto;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+  display: block;
+}
+
+/* Style section headings */
+.resume-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-accent);
+}
+
 /* Apply the accent color globally */
 html {
   accent-color: var(--color-accent); /* Ensures elements inherit the accent color */
@@ -15,9 +69,9 @@ body {
     max-width: 100ch; 
     margin-inline: auto; 
     padding: 1rem;
-    padding-top: 3rem;
-    background-color: Canvas; /* Replace this with your desired color */
-    color: CanvasText;
+    padding-top: calc(3rem + 1vw);
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
   /* Navigation Bar Styling */
 nav {
@@ -30,6 +84,7 @@ nav {
   z-index: 1000; /* Ensures the navbar appears above other elements */
   padding: 0.5rem 0; /* Adds vertical padding for better spacing */
   display: flex; /* Enables Flexbox layout */
+  gap: 1rem;
   justify-content: space-evenly;
   margin-bottom: 1rem; /* Adds space below the navbar */
   --border-color: oklch(50% 10% 200 / 40%);
@@ -51,18 +106,24 @@ nav a {
   transition: all 0.3s ease;;
   flex: 1; /* Makes all links take up the same amount of space */
   text-align: center;
-  border-bottom: none; /* Ensures no border for other links */
+  border-bottom: 2px solid transparent;
 }
 
 nav a:hover {
-  border-bottom: 0.4em solid var(--color-accent); /* Uses the accent color for hover */
+  border-bottom-color: var(--color-accent);
   color: var(--color-accent);
 }
 
 nav a.current {
-  border-bottom: 0.4em solid var(--color-accent); /* Add the bar under the current page link */
+  border-bottom-color: var(--color-accent);
   padding-bottom: 0.1em; /* Adjust padding to counter the border height */
   font-weight: bold; /* Make it visually distinct */
+}
+
+a.external::after {
+  content: " ↗";
+  display: inline-block;
+  margin-left: 0.3em;
 }
 
 /* Ensure form controls inherit the font from the body */
@@ -191,15 +252,14 @@ h4, h5, h6 {
   font-size: 125%; /* Keeps smaller headings proportionate */
 }
 
-:root {
-  color-scheme: light dark; /* Supports both light and dark modes */
-}
-
 .color-scheme {
   position: absolute; /* Take it out of the normal document flow */
   top: 3.5rem; /* Set distance from the top */
   right: 0rem; /* Set distance from the right */
-  font-size: 80%; /* Adjust font size */
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: inherit; /* Inherit font family */
   background-color: #fff; /* Optional: Add background color */
   padding: 5px 10px; /* Optional: Add padding */
@@ -208,10 +268,116 @@ h4, h5, h6 {
   z-index: 1000; /* Ensure it appears on top */
 }
 
-
 .color-scheme select {
   margin-left: 10px;
-  padding: 2px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.light-theme {
+  color-scheme: light;
+  --text-color: #333;
+  --bg-color: #fff;
+  --nav-bg: color-mix(in oklch, var(--color-accent), #fff 85%);
+  --border-color: oklch(50% 10% 200 / 40%);
+}
+
+.dark-theme {
+  color-scheme: dark;
+  --text-color: #fff;
+  --bg-color: #222;
+  --nav-bg: color-mix(in oklch, var(--color-accent), #222 85%);
+  --border-color: oklch(50% 10% 200 / 40%);
+}
+
+/* ========== RESUME-SPECIFIC STYLES ========== */
+.resume-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.resume-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: color-mix(in oklch, var(--bg-color), transparent 90%);
+  border-radius: 8px;
+}
+
+.job, .education {
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  color: color-mix(in oklch, var(--text-color), transparent 30%);
+  font-size: 0.9em;
+}
+
+.responsibilities {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.responsibilities li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  padding: 0.5rem;
+  background: color-mix(in oklch, var(--color-accent), transparent 90%);
+  border-radius: 4px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .resume-container {
+    padding: 1rem;
+  }
+  
+  .profile-header h1 {
+    font-size: 2rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 
