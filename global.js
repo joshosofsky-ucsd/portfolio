@@ -121,4 +121,92 @@ document.addEventListener('DOMContentLoaded', () => {
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     if (selector.value === 'auto') applyTheme('auto');
   });
+
+  fetchJSON('../lib/projects.json').then(data => {
+    const containerElement = document.querySelector('.projects');
+    renderProjects(data, containerElement, 'h2'); // Specify the heading level here
+  }).catch(error => {
+    console.error('Error fetching projects:', error);
+  });;
 });
+
+export async function fetchJSON(url) {
+  try {
+      const response = await fetch(url);
+
+      console.log(response)
+      
+      // Check if response is successful (status 200-299)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.statusText}`);
+      }
+      
+      // Parse and return the JSON data
+      const data = await response.json();
+      console.log(data)
+      return data;
+
+  } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+      // Re-throw the error to allow handling by calling code
+      throw error;
+  }
+}
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  // Your code will go here
+  // Check if containerElement is valid
+  if (!containerElement) {
+    console.error('Error: containerElement is null or undefined.');
+    return;
+  }
+
+  // Check if projects is a valid array
+  if (!Array.isArray(project)) {
+    console.error('Error: projects is not a valid array.');
+    return;
+  }
+
+  // Validate headingLevel
+  const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!validHeadingLevels.includes(headingLevel)) {
+    console.warn(`Warning: Invalid heading level "${headingLevel}". Defaulting to "h2".`);
+    headingLevel = 'h2';
+  }
+
+  containerElement.innerHTML = '';
+  // Check if projects array is empty
+  if (project.length === 0) {
+    containerElement.innerHTML = '<p>No projects available.</p>';
+    return;
+  }
+  project.forEach(project => {
+    const article = document.createElement('article');
+    // Create the heading element with the specified level
+    const heading = document.createElement(headingLevel);
+    if (project.link) {
+      heading.innerHTML = `<a href="${project.link}" target="_blank">${project.title || 'Untitled Project'}</a>`;
+    } else {
+      heading.textContent = project.title || 'Untitled Project';
+    }
+    article.appendChild(heading);
+    article.innerHTML += `
+      ${project.image ? `<img src="${project.image}" alt="${project.title || 'Project Image'}">` : '<div>No image available</div>'}
+      <p>${project.description || 'No description available'}</p>
+    `;
+    containerElement.appendChild(article);
+
+    
+    // // Add project details to the article
+    // const title = document.createElement('h2');
+    // title.textContent = project.title;
+    // article.appendChild(title);
+
+    // const description = document.createElement('p');
+    // description.textContent = project.description;
+    // article.appendChild(description);
+
+    // // Append the article to the container element
+    // containerElement.appendChild(article);
+  });
+}

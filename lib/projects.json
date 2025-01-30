@@ -1,0 +1,63 @@
+[
+    {
+        "title": "Recipe Analytics",
+        "image": "../images/recipe.png",
+        "description": "My final project for my DSC80 class where I analyzed a dataset of food recipes scraped from food.com",
+        "link": "https://joshosofsky-ucsd.github.io/recipe-analytics/"
+    },
+    {
+        "title": "San Francisco Weather and Toursim",
+        "image": "../images/sf_weather.png",
+        "description": "A visualization I created for my project 1 for my DSC 106 class where I analyzed how weather data in San Francisco affects tourism rates"
+    },
+    {
+        "title": "Praesentium fugiat deleniti facilis.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Omnis asperiores est assumenda quibusdam quam praesentium! Maxime harum dolores fugiat saepe accusantium iste voluptatum amet magnam, est, non natus et eos fuga facere nihil mollitia sed. Et, nihil neque!"
+    },
+    {
+        "title": "Quos tempore recusandae magni.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Officiis esse aspernatur deserunt temporibus. Autem hic eligendi quas eius iure obcaecati ut beatae eos facilis illo corporis sunt dolorem, aut possimus, eaque debitis amet iste? Recusandae in quas reprehenderit!"
+    },
+    {
+        "title": "Repellendus deserunt repudiandae praesentium!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Doloribus quam excepturi modi praesentium exercitationem consequuntur earum maiores dicta dolor placeat, esse ipsam, architecto voluptatibus adipisci, voluptates nihil saepe cum explicabo dignissimos minus odio obcaecati. Sunt ratione nostrum omnis."
+    },
+    {
+        "title": "Ab provident numquam labore?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Enim commodi error aliquid ducimus saepe sapiente delectus culpa vitae et perspiciatis a aperiam iusto laudantium, voluptate, veritatis quidem repellat dicta ea ullam rerum tenetur nostrum? Commodi eaque quia eius?"
+    },
+    {
+        "title": "Labore doloribus repellendus cupiditate!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Doloremque laudantium maiores quaerat facere nostrum neque aliquam nihil officia saepe non laborum similique deserunt hic, sapiente nulla, delectus consequuntur ipsum rem alias! Libero consequuntur vel inventore necessitatibus esse at."
+    },
+    {
+        "title": "Possimus vel in corrupti!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Explicabo, temporibus amet cupiditate placeat ut officia iure eaque velit voluptate eligendi optio molestiae beatae commodi ullam earum consectetur praesentium cumque, laboriosam obcaecati dolore iste. Minus nam consectetur odit illo!"
+    },
+    {
+        "title": "Libero reprehenderit voluptatum unde.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Vitae sunt ullam fuga vero distinctio nam maxime quae recusandae assumenda. Pariatur doloribus recusandae dolor, qui asperiores cumque quidem consequuntur itaque explicabo, reiciendis omnis delectus exercitationem accusamus molestiae ea error!"
+    },
+    {
+        "title": "Dolores fuga labore corporis.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nam sint sequi similique alias aspernatur. Natus aspernatur non et voluptas inventore, obcaecati necessitatibus reprehenderit asperiores odit ipsam, molestiae placeat illo accusamus optio similique quibusdam. Hic necessitatibus voluptatibus molestiae provident."
+    },
+    {
+        "title": "Nihil pariatur maxime temporibus?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Blanditiis ipsa impedit, totam ex corporis modi. Consequuntur, dolorum incidunt ad aut magni harum dolores delectus maiores tempora numquam voluptas id debitis iusto labore minus similique iste necessitatibus sapiente! Fugit."
+    },
+    {
+        "title": "Illum officia reprehenderit nihil?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Necessitatibus ut aliquam laborum et omnis ad labore, itaque libero numquam eius esse suscipit provident ipsam ab odio ratione cum nam ullam nostrum laboriosam doloremque voluptatem adipisci? Totam, alias culpa."
+    }
+]
