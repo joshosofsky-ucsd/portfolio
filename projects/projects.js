@@ -7,7 +7,7 @@ async function loadProjects() {
       // Set the project count
       const projectsTitle = document.querySelector('.projects-title');
       if (projectsTitle) {
-        projectsTitle.textContent = `My Projects (${projects.length})`;
+        projectsTitle.textContent = `${projects.length} Projects`;
       }
     } catch (error) {
       console.error('Error loading projects:', error);

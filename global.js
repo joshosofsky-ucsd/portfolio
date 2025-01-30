@@ -153,7 +153,7 @@ export async function fetchJSON(url) {
   }
 }
 
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   // Your code will go here
   // Check if containerElement is valid
   if (!containerElement) {
@@ -162,7 +162,7 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
   }
 
   // Check if projects is a valid array
-  if (!Array.isArray(project)) {
+  if (!Array.isArray(projects)) {
     console.error('Error: projects is not a valid array.');
     return;
   }
@@ -176,11 +176,11 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
 
   containerElement.innerHTML = '';
   // Check if projects array is empty
-  if (project.length === 0) {
+  if (projects.length === 0) {
     containerElement.innerHTML = '<p>No projects available.</p>';
     return;
   }
-  project.forEach(project => {
+  projects.forEach(project => {
     const article = document.createElement('article');
     // Create the heading element with the specified level
     const heading = document.createElement(headingLevel);
@@ -195,18 +195,10 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
       <p>${project.description || 'No description available'}</p>
     `;
     containerElement.appendChild(article);
-
-    
-    // // Add project details to the article
-    // const title = document.createElement('h2');
-    // title.textContent = project.title;
-    // article.appendChild(title);
-
-    // const description = document.createElement('p');
-    // description.textContent = project.description;
-    // article.appendChild(description);
-
-    // // Append the article to the container element
-    // containerElement.appendChild(article);
   });
+}
+
+export async function fetchGitHubData(username) {
+  // return statement here
+  return fetchJSON(`https://api.github.com/users/${username}`);
 }
