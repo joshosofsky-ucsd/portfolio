@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selector.value === 'auto') applyTheme('auto');
   });
 
-  fetchJSON('../lib/projects.json').then(data => {
+  fetchJSON('/lib/projects.json').then(data => {
     const containerElement = document.querySelector('.projects');
     renderProjects(data, containerElement, 'h2'); // Specify the heading level here
   }).catch(error => {
