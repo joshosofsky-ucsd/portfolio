@@ -11,6 +11,7 @@ const githubData = await fetchGitHubData('joshosofsky-ucsd');
 const profileStats = document.querySelector('#profile-stats');
 if (profileStats) {
     profileStats.innerHTML = `
+        <h2 class="github-stats-header">My GitHub Stats</h2>
           <dl>
             <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
             <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>

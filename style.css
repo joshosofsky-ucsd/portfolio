@@ -385,9 +385,64 @@ img {
   height: auto;
 }
 
+/* Add this to your style.css */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1rem; /* Spacing between cells */
+  margin: 1rem 0;
+  text-align: center; /* Optional: Center content */
+}
 
+#profile-stats dt {
+  grid-row: 1; /* Force all <dt> to first row */
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.5rem;
+}
 
+#profile-stats dd {
+  grid-row: 2; /* Force all <dd> to second row */
+  margin: 0;
+  font-size: 1.2rem;
+  color: color-mix(in oklch, var(--text-color), transparent 20%);
+}
 
+/* Optional: Add responsive behavior */
+@media (max-width: 600px) {
+  #profile-stats dl {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    grid-template-rows: repeat(2, auto); /* 2 rows of terms/defs */
+  }
+  
+  /* Reset positioning for mobile */
+  #profile-stats dt,
+  #profile-stats dd {
+    grid-row: auto;
+  }
+}
 
+/* GitHub Stats Section */
+#profile-stats {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: color-mix(in oklch, var(--bg-color), transparent 90%);
+  border-radius: 8px;
+}
 
+.github-stats-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: var(--color-accent);
+  position: relative;
+}
 
+.github-stats-header::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 0.5rem auto 0;
+}
