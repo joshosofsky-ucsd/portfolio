@@ -1,7 +1,7 @@
 [
     {
         "title": "Recipe Analytics",
-        "image": "/portfolio/images/recipe.png?v=1",
+        "image": "./images/recipe.png?v=1",
         "description": "My final project for my DSC80 class where I analyzed a dataset of food recipes scraped from food.com",
         "year": "2024",
         "link": "https://joshosofsky-ucsd.github.io/recipe-analytics/"
