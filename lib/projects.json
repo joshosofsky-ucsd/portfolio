@@ -1,14 +1,14 @@
 [
     {
         "title": "Recipe Analytics",
-        "image": "../images/recipe.png",
+        "image": "../images/recipe.png?v=1",
         "description": "My final project for my DSC80 class where I analyzed a dataset of food recipes scraped from food.com",
         "year": "2024",
         "link": "https://joshosofsky-ucsd.github.io/recipe-analytics/"
     },
     {
         "title": "San Francisco Weather and Toursim",
-        "image": "../images/sf_weather.png",
+        "image": "../images/sf_weather.png?v=1",
         "year": "2025",
         "description": "A visualization I created for my project 1 for my DSC 106 class where I analyzed how weather data in San Francisco affects tourism rates"
     },
