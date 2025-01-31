@@ -192,8 +192,12 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       heading.textContent = project.title || 'Untitled Project';
     }
     article.appendChild(heading);
+    let img_source = project.image;
+    if (!ARE_WE_HOME && !img_source.startsWith('http')) {
+      img_source = '.' + img_source;
+    }
     article.innerHTML += `
-      ${project.image ? `<img src="${project.image}" alt="${project.title || 'Project Image'}">` : '<div>No image available</div>'}
+      ${img_source ? `<img src="${img_source}" alt="${project.title || 'Project Image'}">` : '<div>No image available</div>'}
       <p>${project.description || 'No description available'}</p>
     `;
     containerElement.appendChild(article);
