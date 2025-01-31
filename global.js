@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selector.value === 'auto') applyTheme('auto');
   });
 
-  fetchJSON('../lib/projects.json').then(data => {
+  fetchJSON('/lib/projects.json').then(data => {
     const containerElement = document.querySelector('.projects');
     renderProjects(data, containerElement, 'h2'); // Specify the heading level here
   }).catch(error => {
@@ -131,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export async function fetchJSON(url) {
+  // const baseURL = window.location.origin; // Gets root URL
+  // const response = await fetch(`${baseURL}${path}`);
   try {
       const response = await fetch(url);
 
