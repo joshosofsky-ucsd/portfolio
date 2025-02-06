@@ -218,9 +218,23 @@ label {
   height: auto; /* Ensures images maintain their aspect ratio */
 }
 
-/* Optional: Styling for paragraphs inside <article> */
-.projects article p {
-  margin: 0.5em 0; /* Adds vertical spacing between the paragraph and other elements */
+/* Styling for project description */
+.projects article .project-description {
+  margin-bottom: 10px; /* Adds space below the description */
+}
+
+/* Styling for project year */
+.projects article .project-year {
+  font-weight: bold; /* Makes the year bold */
+  margin-top: 225px; /* Adds space above the year */
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  /* Do not clip shapes outside the viewBox */
+  overflow: visible;
 }
 
 /* Global heading styles */
