@@ -237,21 +237,24 @@ label {
   overflow: visible;
 }
 
-/* Main Container */
+/* Main Container - Side-by-Side Layout */
 .container {
-  display: flex; /* Align items side by side */
-  align-items: center; /* Center them vertically */
-  justify-content: center; /* Center horizontally */
-  gap: 2em; /* Space between the pie chart and legend */
-  margin: 2em auto; /* Center on page */
-  max-width: 800px; /* Prevent overly wide layout */
+  display: flex;
+  flex-wrap: wrap; /* Allows legend to move below when the screen is narrow */
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  margin: 2em auto;
+  max-width: 900px; /* Keeps layout from stretching too much */
+  text-align: center;
 }
 
 /* Pie Chart (SVG) */
 .container svg {
-  flex: 0 0 auto; /* Ensure the pie chart maintains its size */
-  width: 300px; /* Adjust width as needed */
-  height: 300px; /* Adjust height as needed */
+  flex: 1; /* Allows it to shrink/grow dynamically */
+  max-width: 50%; /* Prevents it from taking too much space */
+  height: auto; /* Maintains aspect ratio */
+  min-width: 250px; /* Ensures it doesn’t get too small */
 }
 
 /* Legend Styling */
@@ -260,14 +263,15 @@ label {
   padding: 1em;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Stack legend items vertically */
-  gap: 0.5em; /* Space between items */
-  border: 1px solid #ccc; /* Light border */
+  flex-direction: column;
+  gap: 0.5em;
+  border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex: 1; /* Make the legend take up remaining space */
-  min-width: 200px; /* Prevent legend from shrinking too much */
+  flex: 1; /* Allows legend to take available space */
+  max-width: 250px; /* Prevents it from stretching too much */
+  min-width: 200px; /* Ensures readability on small screens */
 }
 
 /* Individual Legend Items */
@@ -295,6 +299,22 @@ label {
   font-size: 14px;
   color: #666;
   margin-left: 3px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack pie chart and legend on small screens */
+    align-items: center;
+  }
+  
+  .container svg {
+    max-width: 80%; /* Make the pie chart take more width */
+  }
+  
+  .legend {
+    max-width: 80%; /* Allow legend to expand more */
+  }
 }
 
 /* Global heading styles */
