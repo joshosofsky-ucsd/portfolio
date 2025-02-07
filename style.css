@@ -291,6 +291,7 @@ label {
   margin-right: 6px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
 }
 
 /* Numbers in Parentheses */
@@ -315,6 +316,34 @@ label {
   .legend {
     max-width: 80%; /* Allow legend to expand more */
   }
+}
+
+.legend li.selected {
+  font-weight: bold;
+  opacity: 1 !important;
+}
+
+svg:has(path:hover) {
+  path:not(:hover) {
+    opacity: 50%;
+  }
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path.selected {
+  fill: var(--color);
 }
 
 /* Global heading styles */
