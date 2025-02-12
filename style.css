@@ -354,6 +354,107 @@ h1, h2, h3, h4, h5, h6 {
   color: CanvasText;
 }
 
+/* Styling for the stats display */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* More responsive layout */
+  gap: 2em; /* Increased spacing between items */
+  margin: 2em auto;
+  padding: 2em;
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 12px; /* Softer rounded corners */
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  max-width: 900px; /* Prevent it from stretching too wide */
+}
+
+/* Styling for each stat block */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for labels (dt) */
+.stat-item dt {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444; /* Slightly darker text */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* Subtle spacing for clarity */
+  margin-bottom: 0.5em;
+}
+
+/* Style for values (dd) */
+.stat-item dd {
+  font-size: 2.2rem; /* Larger numbers for emphasis */
+  font-weight: bold;
+  margin: 0;
+  color: #222; /* Darker for contrast */
+}
+
+/* Styling for gridlines */
+.gridlines line {
+  stroke: #ccc; /* Light gray color for gridlines */
+  stroke-opacity: 0.7; /* Slightly transparent */
+  stroke-dasharray: 2, 2; /* Dashed line style */
+}
+
+/* Styling for the info display */
+dl.info {
+  display: grid; /* Use grid layout */
+  grid-template-columns: auto 1fr; /* Two columns: auto for dt, 1fr for dd */
+  gap: 0.5em; /* Add some gap between items */
+  margin: 0; /* Remove default margin */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  font-weight: normal; /* Make dt less prominent */
+  color: #666; /* Lighter color for dt */
+}
+
+dl.info dd {
+  margin: 0; /* Remove default margin */
+}
+
+/* Styling for the tooltip */
+.tooltip {
+  position: fixed; /* Fixed position */
+  top: 10em; /* Place further down from the top of the viewport */
+  left: 1em; /* Place at the left of the viewport */
+  background-color: #fff; /* Background color */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0.5em; /* Smaller padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+  z-index: 1000; /* Ensure it is above other elements */
+  max-width: 200px; /* Set a maximum width */
+  font-size: 0.9em; /* Slightly smaller font size */
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
 /* Specific styles for <h1> */
 h1 {
   font-size: 400%; /* Makes <h1> significantly larger than body text */
