@@ -10,7 +10,8 @@
         "title": "San Francisco Weather and Toursim",
         "image": "./images/sf_weather.png?v=1",
         "year": "2025",
-        "description": "A visualization I created for my project 1 for my DSC 106 class where I analyzed how weather data in San Francisco affects tourism rates"
+        "description": "A visualization I created for my project 1 for my DSC 106 class where I analyzed how weather data in San Francisco affects tourism rates",
+        "link": "../pdfs/project1.pdf"
     },
     {
         "title": "Praesentium fugiat deleniti facilis.",
