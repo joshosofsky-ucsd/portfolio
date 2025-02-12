@@ -14,10 +14,11 @@
         "link": "../pdfs/project1.pdf"
     },
     {
-        "title": "Praesentium fugiat deleniti facilis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "year": "2023",
-        "description": "Omnis asperiores est assumenda quibusdam quam praesentium! Maxime harum dolores fugiat saepe accusantium iste voluptatum amet magnam, est, non natus et eos fuga facere nihil mollitia sed. Et, nihil neque!"
+        "title": "Earnest and Deceptive Visluaizations",
+        "image": "./images/earnest.png?v=1",
+        "year": "2025",
+        "description": "A visualization I created for my project 2 for my DSC 106 class where I created an earnest and deceptive visualization from the same dataset highliting the importance of ethical data visualization",
+        "link": "../pdfs/project2.pdf"
     },
     {
         "title": "Quos tempore recusandae magni.",
