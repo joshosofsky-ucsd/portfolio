@@ -11,14 +11,14 @@
         "image": "./images/sf_weather.png?v=1",
         "year": "2025",
         "description": "A visualization I created for my project 1 for my DSC 106 class where I analyzed how weather data in San Francisco affects tourism rates",
-        "link": "../pdfs/project1.pdf"
+        "link": "./pdfs/project1.pdf"
     },
     {
         "title": "Earnest and Deceptive Visluaizations",
         "image": "./images/earnest.png?v=1",
         "year": "2025",
         "description": "A visualization I created for my project 2 for my DSC 106 class where I created an earnest and deceptive visualization from the same dataset highliting the importance of ethical data visualization",
-        "link": "../pdfs/project2.pdf"
+        "link": "./pdfs/project2.pdf"
     },
     {
         "title": "Quos tempore recusandae magni.",

@@ -187,19 +187,15 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const article = document.createElement('article');
     // Create the heading element with the specified level
     const heading = document.createElement(headingLevel);
-    if (project.link) {
-      heading.innerHTML = `<a href="${project.link}" target="_blank">${project.title || 'Untitled Project'}</a>`;
-    } else {
-      heading.textContent = project.title || 'Untitled Project';
-    }
     article.appendChild(heading);
     let img_source = project.image;
     let link_source = project.link;
     if (!ARE_WE_HOME && !img_source.startsWith('http')) {
       img_source = '.' + img_source;
     }
-    // if (!ARE_WE_HOME && !link_source.startsWith('http')) {
-    //   link_source = '.' + link_source;
+    if (!ARE_WE_HOME && link_source && !link_source.startsWith('http')) {
+      link_source = '.' + link_source;
+    }
     if (link_source) {
       heading.innerHTML = `<a href="${link_source}" target="_blank">${project.title || 'Untitled Project'}</a>`;
     } else {
