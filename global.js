@@ -194,8 +194,16 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     }
     article.appendChild(heading);
     let img_source = project.image;
+    let link_source = project.link;
     if (!ARE_WE_HOME && !img_source.startsWith('http')) {
       img_source = '.' + img_source;
+    }
+    // if (!ARE_WE_HOME && !link_source.startsWith('http')) {
+    //   link_source = '.' + link_source;
+    if (link_source) {
+      heading.innerHTML = `<a href="${link_source}" target="_blank">${project.title || 'Untitled Project'}</a>`;
+    } else {
+      heading.textContent = project.title || 'Untitled Project';
     }
     article.innerHTML += `
       ${img_source ? `<img src="${img_source}" alt="${project.title || 'Project Image'}">` : '<div>No image available</div>'}
