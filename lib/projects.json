@@ -21,10 +21,11 @@
         "link": "./pdfs/project2.pdf"
     },
     {
-        "title": "Quos tempore recusandae magni.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "year": "2022",
-        "description": "Officiis esse aspernatur deserunt temporibus. Autem hic eligendi quas eius iure obcaecati ut beatae eos facilis illo corporis sunt dolorem, aut possimus, eaque debitis amet iste? Recusandae in quas reprehenderit!"
+        "title": "Bike Watching in Boston",
+        "image": "./images/boston_bikes.png?v=1",
+        "year": "2025",
+        "description": "An interactive visualization I created showing the bike routes and bike stations in Boston and the businesses around them",
+        "link": "https://joshosofsky-ucsd.github.io/bikewatching/"
     },
     {
         "title": "Repellendus deserunt repudiandae praesentium!",
