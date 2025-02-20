@@ -22,7 +22,7 @@
     },
     {
         "title": "Bike Watching in Boston",
-        "image": "./images/boston_bikes.png?v=1",
+        "image": "./images/bikewatching.png?v=1",
         "year": "2025",
         "description": "An interactive visualization I created showing the bike routes and bike stations in Boston and the businesses around them",
         "link": "https://joshosofsky-ucsd.github.io/bikewatching/"
